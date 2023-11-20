@@ -1,0 +1,685 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		221E552E2B0B102C00868159 /* social_wifiApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E552D2B0B102C00868159 /* social_wifiApp.swift */; };
+		221E55302B0B102C00868159 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E552F2B0B102C00868159 /* ContentView.swift */; };
+		221E55322B0B102C00868159 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221E55312B0B102C00868159 /* Assets.xcassets */; };
+		221E55352B0B102C00868159 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 221E55342B0B102C00868159 /* Preview Assets.xcassets */; };
+		221E55402B0B102C00868159 /* social_wifiTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E553F2B0B102C00868159 /* social_wifiTests.swift */; };
+		221E554A2B0B102C00868159 /* social_wifiUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E55492B0B102C00868159 /* social_wifiUITests.swift */; };
+		221E554C2B0B102C00868159 /* social_wifiUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 221E554B2B0B102C00868159 /* social_wifiUITestsLaunchTests.swift */; };
+		22C80BFA2B0B0792008ADE36 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80BF92B0B0791008ADE36 /* OnboardingView.swift */; };
+		22C80BFE2B0B0988008ADE36 /* CustomeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80BFD2B0B0988008ADE36 /* CustomeButton.swift */; };
+		22C80C002B0B284A008ADE36 /* OnboardingView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80BFF2B0B284A008ADE36 /* OnboardingView2.swift */; };
+		22C80C022B0B2897008ADE36 /* OnboardingView3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C012B0B2897008ADE36 /* OnboardingView3.swift */; };
+		22C80C042B0B2F6F008ADE36 /* SubmitButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C032B0B2F6F008ADE36 /* SubmitButton.swift */; };
+		22C80C092B0B342A008ADE36 /* ScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C082B0B342A008ADE36 /* ScanView.swift */; };
+		22C80C0B2B0B3443008ADE36 /* NearbyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C0A2B0B3443008ADE36 /* NearbyView.swift */; };
+		22C80C0D2B0B3468008ADE36 /* TargetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C0C2B0B3468008ADE36 /* TargetView.swift */; };
+		22C80C0F2B0B3494008ADE36 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C0E2B0B3494008ADE36 /* ProfileView.swift */; };
+		22C80C112B0B34BB008ADE36 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C102B0B34BB008ADE36 /* DetailView.swift */; };
+		22C80C132B0B34E2008ADE36 /* SubscriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C122B0B34E2008ADE36 /* SubscriptionView.swift */; };
+		22C80C152B0B3CD3008ADE36 /* CustomCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C142B0B3CD3008ADE36 /* CustomCircle.swift */; };
+		22C80C182B0B4571008ADE36 /* MainHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C172B0B4571008ADE36 /* MainHeader.swift */; };
+		22C80C1A2B0B4F8B008ADE36 /* UserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C80C192B0B4F8B008ADE36 /* UserList.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		221E553C2B0B102C00868159 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 221E55222B0B102C00868159 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 221E55292B0B102C00868159;
+			remoteInfo = social_wifi;
+		};
+		221E55462B0B102C00868159 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 221E55222B0B102C00868159 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 221E55292B0B102C00868159;
+			remoteInfo = social_wifi;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		221E552A2B0B102C00868159 /* social_wifi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = social_wifi.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		221E552D2B0B102C00868159 /* social_wifiApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = social_wifiApp.swift; sourceTree = "<group>"; };
+		221E552F2B0B102C00868159 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		221E55312B0B102C00868159 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		221E55342B0B102C00868159 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		221E55362B0B102C00868159 /* social_wifi.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = social_wifi.entitlements; sourceTree = "<group>"; };
+		221E553B2B0B102C00868159 /* social_wifiTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = social_wifiTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		221E553F2B0B102C00868159 /* social_wifiTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = social_wifiTests.swift; sourceTree = "<group>"; };
+		221E55452B0B102C00868159 /* social_wifiUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = social_wifiUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		221E55492B0B102C00868159 /* social_wifiUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = social_wifiUITests.swift; sourceTree = "<group>"; };
+		221E554B2B0B102C00868159 /* social_wifiUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = social_wifiUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		22C80BF92B0B0791008ADE36 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		22C80BFD2B0B0988008ADE36 /* CustomeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeButton.swift; sourceTree = "<group>"; };
+		22C80BFF2B0B284A008ADE36 /* OnboardingView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView2.swift; sourceTree = "<group>"; };
+		22C80C012B0B2897008ADE36 /* OnboardingView3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView3.swift; sourceTree = "<group>"; };
+		22C80C032B0B2F6F008ADE36 /* SubmitButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubmitButton.swift; sourceTree = "<group>"; };
+		22C80C082B0B342A008ADE36 /* ScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanView.swift; sourceTree = "<group>"; };
+		22C80C0A2B0B3443008ADE36 /* NearbyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyView.swift; sourceTree = "<group>"; };
+		22C80C0C2B0B3468008ADE36 /* TargetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetView.swift; sourceTree = "<group>"; };
+		22C80C0E2B0B3494008ADE36 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		22C80C102B0B34BB008ADE36 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		22C80C122B0B34E2008ADE36 /* SubscriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionView.swift; sourceTree = "<group>"; };
+		22C80C142B0B3CD3008ADE36 /* CustomCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCircle.swift; sourceTree = "<group>"; };
+		22C80C172B0B4571008ADE36 /* MainHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainHeader.swift; sourceTree = "<group>"; };
+		22C80C192B0B4F8B008ADE36 /* UserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserList.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		221E55272B0B102C00868159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		221E55382B0B102C00868159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		221E55422B0B102C00868159 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		221E55212B0B102C00868159 = {
+			isa = PBXGroup;
+			children = (
+				221E552C2B0B102C00868159 /* social_wifi */,
+				221E553E2B0B102C00868159 /* social_wifiTests */,
+				221E55482B0B102C00868159 /* social_wifiUITests */,
+				221E552B2B0B102C00868159 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		221E552B2B0B102C00868159 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				221E552A2B0B102C00868159 /* social_wifi.app */,
+				221E553B2B0B102C00868159 /* social_wifiTests.xctest */,
+				221E55452B0B102C00868159 /* social_wifiUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		221E552C2B0B102C00868159 /* social_wifi */ = {
+			isa = PBXGroup;
+			children = (
+				22C80BFB2B0B0942008ADE36 /* Views */,
+				221E552D2B0B102C00868159 /* social_wifiApp.swift */,
+				221E55312B0B102C00868159 /* Assets.xcassets */,
+				221E55362B0B102C00868159 /* social_wifi.entitlements */,
+				221E55332B0B102C00868159 /* Preview Content */,
+			);
+			path = social_wifi;
+			sourceTree = "<group>";
+		};
+		221E55332B0B102C00868159 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				221E55342B0B102C00868159 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		221E553E2B0B102C00868159 /* social_wifiTests */ = {
+			isa = PBXGroup;
+			children = (
+				221E553F2B0B102C00868159 /* social_wifiTests.swift */,
+			);
+			path = social_wifiTests;
+			sourceTree = "<group>";
+		};
+		221E55482B0B102C00868159 /* social_wifiUITests */ = {
+			isa = PBXGroup;
+			children = (
+				221E55492B0B102C00868159 /* social_wifiUITests.swift */,
+				221E554B2B0B102C00868159 /* social_wifiUITestsLaunchTests.swift */,
+			);
+			path = social_wifiUITests;
+			sourceTree = "<group>";
+		};
+		22C80BFB2B0B0942008ADE36 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				22C80C072B0B340B008ADE36 /* Profile */,
+				22C80C062B0B33E4008ADE36 /* Main */,
+				22C80C052B0B3379008ADE36 /* Onboarding */,
+				22C80BFC2B0B0961008ADE36 /* Components */,
+				221E552F2B0B102C00868159 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		22C80BFC2B0B0961008ADE36 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				22C80C162B0B44FA008ADE36 /* Layout */,
+				22C80BFD2B0B0988008ADE36 /* CustomeButton.swift */,
+				22C80C032B0B2F6F008ADE36 /* SubmitButton.swift */,
+				22C80C142B0B3CD3008ADE36 /* CustomCircle.swift */,
+				22C80C192B0B4F8B008ADE36 /* UserList.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		22C80C052B0B3379008ADE36 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				22C80C012B0B2897008ADE36 /* OnboardingView3.swift */,
+				22C80BFF2B0B284A008ADE36 /* OnboardingView2.swift */,
+				22C80BF92B0B0791008ADE36 /* OnboardingView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		22C80C062B0B33E4008ADE36 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				22C80C082B0B342A008ADE36 /* ScanView.swift */,
+				22C80C0A2B0B3443008ADE36 /* NearbyView.swift */,
+				22C80C0C2B0B3468008ADE36 /* TargetView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		22C80C072B0B340B008ADE36 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				22C80C0E2B0B3494008ADE36 /* ProfileView.swift */,
+				22C80C102B0B34BB008ADE36 /* DetailView.swift */,
+				22C80C122B0B34E2008ADE36 /* SubscriptionView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		22C80C162B0B44FA008ADE36 /* Layout */ = {
+			isa = PBXGroup;
+			children = (
+				22C80C172B0B4571008ADE36 /* MainHeader.swift */,
+			);
+			path = Layout;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		221E55292B0B102C00868159 /* social_wifi */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 221E554F2B0B102C00868159 /* Build configuration list for PBXNativeTarget "social_wifi" */;
+			buildPhases = (
+				221E55262B0B102C00868159 /* Sources */,
+				221E55272B0B102C00868159 /* Frameworks */,
+				221E55282B0B102C00868159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = social_wifi;
+			productName = social_wifi;
+			productReference = 221E552A2B0B102C00868159 /* social_wifi.app */;
+			productType = "com.apple.product-type.application";
+		};
+		221E553A2B0B102C00868159 /* social_wifiTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 221E55522B0B102C00868159 /* Build configuration list for PBXNativeTarget "social_wifiTests" */;
+			buildPhases = (
+				221E55372B0B102C00868159 /* Sources */,
+				221E55382B0B102C00868159 /* Frameworks */,
+				221E55392B0B102C00868159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				221E553D2B0B102C00868159 /* PBXTargetDependency */,
+			);
+			name = social_wifiTests;
+			productName = social_wifiTests;
+			productReference = 221E553B2B0B102C00868159 /* social_wifiTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		221E55442B0B102C00868159 /* social_wifiUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 221E55552B0B102C00868159 /* Build configuration list for PBXNativeTarget "social_wifiUITests" */;
+			buildPhases = (
+				221E55412B0B102C00868159 /* Sources */,
+				221E55422B0B102C00868159 /* Frameworks */,
+				221E55432B0B102C00868159 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				221E55472B0B102C00868159 /* PBXTargetDependency */,
+			);
+			name = social_wifiUITests;
+			productName = social_wifiUITests;
+			productReference = 221E55452B0B102C00868159 /* social_wifiUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		221E55222B0B102C00868159 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					221E55292B0B102C00868159 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+					221E553A2B0B102C00868159 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 221E55292B0B102C00868159;
+					};
+					221E55442B0B102C00868159 = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = 221E55292B0B102C00868159;
+					};
+				};
+			};
+			buildConfigurationList = 221E55252B0B102C00868159 /* Build configuration list for PBXProject "social_wifi" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 221E55212B0B102C00868159;
+			productRefGroup = 221E552B2B0B102C00868159 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				221E55292B0B102C00868159 /* social_wifi */,
+				221E553A2B0B102C00868159 /* social_wifiTests */,
+				221E55442B0B102C00868159 /* social_wifiUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		221E55282B0B102C00868159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221E55352B0B102C00868159 /* Preview Assets.xcassets in Resources */,
+				221E55322B0B102C00868159 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		221E55392B0B102C00868159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		221E55432B0B102C00868159 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		221E55262B0B102C00868159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22C80C182B0B4571008ADE36 /* MainHeader.swift in Sources */,
+				22C80BFA2B0B0792008ADE36 /* OnboardingView.swift in Sources */,
+				22C80C112B0B34BB008ADE36 /* DetailView.swift in Sources */,
+				22C80C092B0B342A008ADE36 /* ScanView.swift in Sources */,
+				22C80C1A2B0B4F8B008ADE36 /* UserList.swift in Sources */,
+				221E55302B0B102C00868159 /* ContentView.swift in Sources */,
+				22C80C0D2B0B3468008ADE36 /* TargetView.swift in Sources */,
+				22C80C132B0B34E2008ADE36 /* SubscriptionView.swift in Sources */,
+				22C80BFE2B0B0988008ADE36 /* CustomeButton.swift in Sources */,
+				22C80C022B0B2897008ADE36 /* OnboardingView3.swift in Sources */,
+				22C80C042B0B2F6F008ADE36 /* SubmitButton.swift in Sources */,
+				221E552E2B0B102C00868159 /* social_wifiApp.swift in Sources */,
+				22C80C0B2B0B3443008ADE36 /* NearbyView.swift in Sources */,
+				22C80C0F2B0B3494008ADE36 /* ProfileView.swift in Sources */,
+				22C80C152B0B3CD3008ADE36 /* CustomCircle.swift in Sources */,
+				22C80C002B0B284A008ADE36 /* OnboardingView2.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		221E55372B0B102C00868159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221E55402B0B102C00868159 /* social_wifiTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		221E55412B0B102C00868159 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				221E554C2B0B102C00868159 /* social_wifiUITestsLaunchTests.swift in Sources */,
+				221E554A2B0B102C00868159 /* social_wifiUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		221E553D2B0B102C00868159 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 221E55292B0B102C00868159 /* social_wifi */;
+			targetProxy = 221E553C2B0B102C00868159 /* PBXContainerItemProxy */;
+		};
+		221E55472B0B102C00868159 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 221E55292B0B102C00868159 /* social_wifi */;
+			targetProxy = 221E55462B0B102C00868159 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		221E554D2B0B102C00868159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		221E554E2B0B102C00868159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		221E55502B0B102C00868159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = social_wifi/social_wifi.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"social_wifi/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.social-wifi";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		221E55512B0B102C00868159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = social_wifi/social_wifi.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"social_wifi/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.social-wifi";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		221E55532B0B102C00868159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.social-wifiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/social_wifi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/social_wifi";
+			};
+			name = Debug;
+		};
+		221E55542B0B102C00868159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.6;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.social-wifiTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/social_wifi.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/social_wifi";
+			};
+			name = Release;
+		};
+		221E55562B0B102C00868159 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.social-wifiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = social_wifi;
+			};
+			name = Debug;
+		};
+		221E55572B0B102C00868159 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "test.social-wifiUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = social_wifi;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		221E55252B0B102C00868159 /* Build configuration list for PBXProject "social_wifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221E554D2B0B102C00868159 /* Debug */,
+				221E554E2B0B102C00868159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		221E554F2B0B102C00868159 /* Build configuration list for PBXNativeTarget "social_wifi" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221E55502B0B102C00868159 /* Debug */,
+				221E55512B0B102C00868159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		221E55522B0B102C00868159 /* Build configuration list for PBXNativeTarget "social_wifiTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221E55532B0B102C00868159 /* Debug */,
+				221E55542B0B102C00868159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		221E55552B0B102C00868159 /* Build configuration list for PBXNativeTarget "social_wifiUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				221E55562B0B102C00868159 /* Debug */,
+				221E55572B0B102C00868159 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 221E55222B0B102C00868159 /* Project object */;
+}
