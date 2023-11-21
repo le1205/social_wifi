@@ -9,7 +9,19 @@ import SwiftUI
 
 struct SubscriptionView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            Image("hand")
+            Text("Start Using Socialize\n with Premium Benefits")
+//                .font(.custom("Nunito", size: 24))
+                .font(.system(size: 28, weight: .bold))
+                .fontWeight(.black) // this is closest to font-weight of 900
+                .foregroundColor(Color(red: 8/255, green: 37/255, blue: 105/255)) // #082569
+                .multilineTextAlignment(.center)
+            HStack{
+                
+            }
+            
+        }
     }
 }
 

@@ -13,9 +13,9 @@ struct OnboardingView3: View {
         GeometryReader { geometry in
             VStack {
                 Spacer()
-                Image("image_arm")
+                Image("tool")
                     .resizable()
-                    .frame(width: 221, height: 223)
+                    .frame(height: 230)
                 Spacer()
                 VStack (alignment: .leading, spacing: 10){
                     HStack{
