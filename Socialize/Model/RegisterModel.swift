@@ -22,6 +22,7 @@ extension RegisterView {
         @Published var email: String = ""
         @Published var phone: String = ""
         
+        @Published var authSuccessful: Bool = false
         
         @Published var location: String = ""
         
@@ -48,9 +49,9 @@ extension RegisterView {
                 return
             }
             
-            if validator.validatePassword(password: password) == false {
-                errorMessage = "Invalid password. Password must be at least 6 characters. Only symbols allowed: !,@,#,$,%,^,&,*,(,),{,},<,>,.,;"
-            }
+//            if validator.validatePassword(password: password) == false {
+//                errorMessage = "Invalid password. Password must be at least 6 characters. Only symbols allowed: !,@,#,$,%,^,&,*,(,),{,},<,>,.,;"
+//            }
             
 //            if location != "" {
 //                if validator.validateLocation(location: location) == false {
@@ -76,7 +77,7 @@ extension RegisterView {
                 } else {
                     let authToken = try await AuthenticationService().registerAccount(username, password, tictok, instagram, facebook, snapchat, email)
                     userData.authToken = authToken
-//                    authSuccessful = true
+                    authSuccessful = true
                 }
             } catch let error {
                 print(error.localizedDescription)

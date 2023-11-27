@@ -67,6 +67,9 @@ struct RegisterView: View {
         .navigationDestination(isPresented: $gotoLogin) {
                        LoginView()
                    }
+        .navigationDestination(isPresented: $viewModel.authSuccessful) {
+                ScanView().environmentObject(userData)
+            }
         .navigationBarBackButtonHidden(true)
         .padding(18)
     }

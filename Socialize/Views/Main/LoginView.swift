@@ -60,6 +60,9 @@ struct LoginView: View {
             }
         }
         .padding(18)
+        .navigationDestination(isPresented: $viewModel.authSuccessful) {
+                ScanView().environmentObject(userData)
+            }
         }
     }
 

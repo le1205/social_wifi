@@ -9,14 +9,14 @@ import Foundation
 
 fileprivate struct LoginResponse: Decodable {
     let code: Int
-    let data: Tocken
-    let message: String
+    let accessToken: String?
+    let message: String?
 //    struct Message: Decodable {
 //        let email: String
 //    }
-    struct Tocken: Decodable {
-        let accessToken: String
-    }
+//    struct Tocken: Decodable {
+//        let accessToken: String
+//    }
 }
 
 fileprivate struct ForgetResponse: Decodable {
@@ -53,9 +53,8 @@ fileprivate struct ResetBodyParams: Codable {
 fileprivate struct LoginBodyParams: Codable {
     let email: String
     let password: String
-    var type = 0
-    var role = 2
-    init(_ email: String, _ password: String, _ type: any Numeric, _ role: any Numeric) {
+  
+    init(_ email: String, _ password: String) {
         self.email = email
         self.password = password
     }
@@ -84,14 +83,13 @@ fileprivate struct RegisterBodyParams: Codable {
 
 class AuthenticationService {
     public func login(_ email: String, _ password: String) async throws -> String {
-        let apiEndpoint = URL(string: "https://realityfence.herokuapp.com/auth/signin")!
+        let apiEndpoint = URL(string: "http://192.168.105.94:5000/api/users/login")!
         
         var request = URLRequest(url: apiEndpoint)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        let type = 0
-        let role = 2
-        let bodyParams = LoginBodyParams(email, password, type, role)
+        
+        let bodyParams = LoginBodyParams(email, password)
 
         let bodyData = try JSONEncoder().encode(bodyParams)
         
@@ -99,16 +97,17 @@ class AuthenticationService {
         
         let session = URLSession.shared
         let (responseData, _) = try await session.data(for: request)
+        print("---+++-", String(data: responseData, encoding: .utf8))
         let decoded = try JSONDecoder().decode(LoginResponse.self, from: responseData)
         if decoded.code != 200 {
-            throw AuthenticationError(status_code: decoded.code, serverMessage: decoded.message)
+            throw AuthenticationError(status_code: decoded.code, serverMessage: decoded.message!)
         }
-        return decoded.data.accessToken
+        return decoded.accessToken!
     }
     
     public func registerAccount(_ username: String, _ password: String,_ tictok: String, _ instagram: String, _ facebook: String,_ snapchat: String , _ email: String) async throws -> String {
         // Regular expression checking should be done in the ViewModel of Register
-        let apiEndpoint = URL(string: "https://realityfence.herokuapp.com/auth/signup")!
+        let apiEndpoint = URL(string: "http://192.168.105.94:5000/api/users/register")!
         
         var request = URLRequest(url: apiEndpoint)
         
