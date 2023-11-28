@@ -69,7 +69,7 @@ struct ScanView: View {
             
         }
         .navigationDestination(isPresented: $gotoHome) {
-            TargetView()
+            ScanView()
         }
         .navigationDestination(isPresented: $userData.getSucess) {
                     NearbyView()

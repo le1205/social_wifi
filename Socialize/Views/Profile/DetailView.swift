@@ -31,12 +31,12 @@ struct DetailView: View {
             }
             ScrollView {
                 VStack{
-                    UserList(imageNames:["instagram", "facebook", "tictok", "snapchat"], avatarName: "user_1")
-                    UserList(imageNames:["instagram", "facebook", "tictok"], avatarName: "user_2")
-                    UserList(imageNames:["instagram", "facebook"], avatarName: "user_3")
-                    UserList(imageNames:["instagram", "tictok", "snapchat"], avatarName: "user_4")
-                    UserList(imageNames:["instagram"], avatarName: "user_5")
-                    UserList(imageNames:["instagram"], avatarName: "user_5")
+//                    UserList(imageNames:["instagram", "facebook", "tictok", "snapchat"], avatarName: "user_1")
+//                    UserList(imageNames:["instagram", "facebook", "tictok"], avatarName: "user_2")
+//                    UserList(imageNames:["instagram", "facebook"], avatarName: "user_3")
+//                    UserList(imageNames:["instagram", "tictok", "snapchat"], avatarName: "user_4")
+//                    UserList(imageNames:["instagram"], avatarName: "user_5")
+//                    UserList(imageNames:["instagram"], avatarName: "user_5")
                 }
             }
             Spacer()

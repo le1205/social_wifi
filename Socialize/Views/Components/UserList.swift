@@ -12,6 +12,7 @@ struct UserList: View {
     @State private var gotoDetail: Bool = false
     var imageNames : Array<String>
     var avatarName : String
+    var email : String
     var body: some View {
         ZStack{
             RoundedRectangle(cornerRadius: 25)
@@ -44,14 +45,14 @@ struct UserList: View {
             }
         }
         .navigationDestination(isPresented: $gotoDetail) {
-                                DetailView()
+            TargetView(email: email)
         }
     }
    
 }
 
-struct UserList_Previews: PreviewProvider {
-    static var previews: some View {
-        UserList(imageNames:["instagram", "facebook", "tictok", "snapchat"], avatarName: "user_1")
-    }
-}
+//struct UserList_Previews: PreviewProvider {
+//    static var previews: some View {
+//        UserList(imageNames:["instagram", "facebook", "tictok", "snapchat"], avatarName: "user_1")
+//    }
+//}

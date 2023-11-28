@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct NearbyView: View {
-    var userData = UserData.shared.users
     
+    var userData = UserData.shared.users
+    @State private var gotoScan: Bool = false
     
     var body: some View {
         VStack{
@@ -40,23 +41,20 @@ struct NearbyView: View {
                                !user.snapchat.isEmpty ? "snapchat" : nil
                            ].compactMap { $0 } // This removes nil values from the array
 
-                        UserList(imageNames: imageNames, avatarName: "user_1")
+                        UserList(imageNames: imageNames, avatarName: "user_1", email: user.email)
                     }
-//                    UserList(imageNames:["instagram", "facebook", "tictok", "snapchat"], avatarName: "user_1")
-//                    UserList(imageNames:["instagram", "facebook", "tictok"], avatarName: "user_2")
-//                    UserList(imageNames:["instagram", "facebook"], avatarName: "user_3")
-//                    UserList(imageNames:["instagram", "tictok", "snapchat"], avatarName: "user_4")
-//                    UserList(imageNames:["instagram"], avatarName: "user_5")
-//                    UserList(imageNames:["instagram"], avatarName: "user_5")
                 }
             }
             Spacer()
             CustomeButton(text: "Search again", Button_width: 250, status: true) {
-                
+                gotoScan = true
             }
             
         }
         .padding()
+        .navigationDestination(isPresented: $gotoScan) {
+            ScanView()
+        }
         
     }
 }
