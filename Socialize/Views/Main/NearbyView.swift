@@ -15,7 +15,7 @@ struct NearbyView: View {
         VStack{
             MainHeader()
             HStack{
-                Text("\(userData?.count ?? 0)")
+                Text("\(userData.count )")
                     .font(.custom("Manrope", size: 35))
                     .fontWeight(.semibold) // this is closest to font-weight of 600
                     .foregroundColor(Color(red: 8/255, green: 37/255, blue: 105/255)) // #082569
@@ -31,14 +31,14 @@ struct NearbyView: View {
             }
             ScrollView {
                 VStack{
-                    ForEach(userData?.indices ?? 0..<0, id: \.self) { index in
-                        let user = userData?[index]
+                    ForEach(userData.indices , id: \.self) { index in
+                        let user = userData[index]
                         let imageNames = [
-                            user?.instagram != nil ? "instagram" : nil,
-                            user?.facebook != nil ? "facebook" : nil,
-                            user?.tictok != nil ? "tictok" : nil,
-                            user?.snapchat != nil ? "snapchat" : nil
-                        ].compactMap { $0 } // This removes nil values from the array
+                               !user.instagram.isEmpty ? "instagram" : nil,
+                               !user.facebook.isEmpty ? "facebook" : nil,
+                               !user.tictok.isEmpty ? "tictok" : nil,
+                               !user.snapchat.isEmpty ? "snapchat" : nil
+                           ].compactMap { $0 } // This removes nil values from the array
 
                         UserList(imageNames: imageNames, avatarName: "user_1")
                     }

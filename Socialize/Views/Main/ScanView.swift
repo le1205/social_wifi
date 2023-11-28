@@ -9,15 +9,15 @@ import SwiftUI
 import Foundation
 
 import CoreLocation
+import ObjectiveC
 
 struct ScanView: View {
     @State private var gotoHome: Bool = false
-    @State private var getSucess: Bool = false
     @State private var clicked = false
     @StateObject private var locationManager = LocationManager()
     @State private var nearbyUsers = [ScanModel]()
     
-
+    @ObservedObject var userData = UserData.shared
 
     func baseOverlayColor(height: CGFloat) -> Color {
             Color(red: 5/255, green: 30/255, blue: 88/255, opacity: 0.68)
@@ -41,9 +41,9 @@ struct ScanView: View {
                         withAnimation {
                             self.clicked.toggle()
                         }
-                        
-                        locationManager.requestLocation()
-                        getSucess = true
+                        Task {
+                               await locationManager.requestLocationAsync() // Assuming requestLocationAsync is the correct method name
+                           }
                     }
                 
                 
@@ -71,8 +71,8 @@ struct ScanView: View {
         .navigationDestination(isPresented: $gotoHome) {
             TargetView()
         }
-        .navigationDestination(isPresented: $locationManager.getSucess) {
-            NearbyView()
+        .navigationDestination(isPresented: $userData.getSucess) {
+                    NearbyView()
         }
         .onChange(of: locationManager.lastLocation) { newLocation in
             guard let location = newLocation else { return }
@@ -95,7 +95,55 @@ struct ScanView_Previews: PreviewProvider {
         ScanView()
     }
 }
-//
+//--------------
+
+private var delegateAssociationKey: UInt8 = 0
+
+extension CLLocationManager {
+    func requestLocation() async throws -> CLLocation {
+        return try await withCheckedThrowingContinuation { continuation in
+            let proxyDelegate = ProxyDelegate { location, error in
+                if let location = location {
+                    continuation.resume(returning: location)
+                } else if let error = error {
+                    continuation.resume(throwing: error)
+                } else {
+                    continuation.resume(throwing: CLLocationManagerError.unknownError)
+                }
+                objc_setAssociatedObject(self, &delegateAssociationKey, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) // Clear the association when done
+            }
+            
+            // Associate the proxy delegate with the location manager to keep it alive
+            objc_setAssociatedObject(self, &delegateAssociationKey, proxyDelegate, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+
+            self.delegate = proxyDelegate
+            self.requestLocation() // Call the original requestLocation method
+        }
+    }
+}
+
+
+enum CLLocationManagerError: Error {
+    case unknownError
+}
+
+private class ProxyDelegate: NSObject, CLLocationManagerDelegate {
+    let handler: (CLLocation?, Error?) -> Void
+    
+    init(handler: @escaping (CLLocation?, Error?) -> Void) {
+        self.handler = handler
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        handler(locations.first, nil)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        handler(nil, error)
+    }
+}
+
+//----------
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
@@ -108,22 +156,27 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         self.locationManager.requestWhenInUseAuthorization()
     }
 
-    func requestLocation() {
-        locationManager.requestLocation()
-    }
+    func requestLocationAsync() async {
+            do {
+                let location = try await locationManager.requestLocation()
+                DispatchQueue.main.async {
+                    self.lastLocation = location
+//                    self.getSucess = true
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    self.getSucess = false
+                    // handle error
+                }
+            }
+        }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        DispatchQueue.main.async { // dispatch to the main queue
-            self.lastLocation = locations.first
-            self.getSucess = true // Assuming you want to set this to true when you get a location
-        }
+        lastLocation = locations.first
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        DispatchQueue.main.async { // dispatch to the main queue
-            self.getSucess = false
-            print(error.localizedDescription)
-        }
+        print(error.localizedDescription)
     }
 }
 
@@ -180,7 +233,7 @@ class ScanService {
             return
         }
 
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: request) { [self] (data, response, error) in
             guard let data = data, error == nil else {
                 completion(.failure(error!))
                 return
@@ -189,9 +242,11 @@ class ScanService {
             do {
                 // Assuming your server returns JSON with an array of user data
                 let users = try JSONDecoder().decode([ScanModel].self, from: data)
+                print("#$%%%%-----2", users)
                 completion(.success(users))
                 UserData.shared.users = users
-               
+                UserData.shared.getSucess = true
+                self.userData = users
             } catch {
                 completion(.failure(error))
             }
