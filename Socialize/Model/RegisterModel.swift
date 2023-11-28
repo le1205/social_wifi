@@ -76,6 +76,8 @@ extension RegisterView {
                     return
                 } else {
                     let authToken = try await AuthenticationService().registerAccount(username, password, tictok, instagram, facebook, snapchat, email)
+                    let userData = UserData.shared
+                    userData.resetUserData()
                     userData.authToken = authToken
                     authSuccessful = true
                 }

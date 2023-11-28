@@ -12,9 +12,12 @@ import CoreLocation
 
 struct ScanView: View {
     @State private var gotoHome: Bool = false
+    @State private var getSucess: Bool = false
     @State private var clicked = false
     @StateObject private var locationManager = LocationManager()
     @State private var nearbyUsers = [ScanModel]()
+    
+
 
     func baseOverlayColor(height: CGFloat) -> Color {
             Color(red: 5/255, green: 30/255, blue: 88/255, opacity: 0.68)
@@ -38,7 +41,9 @@ struct ScanView: View {
                         withAnimation {
                             self.clicked.toggle()
                         }
+                        
                         locationManager.requestLocation()
+                        getSucess = true
                     }
                 
                 
@@ -61,9 +66,13 @@ struct ScanView: View {
                 Image("user")
             }
             .padding(15)
+            
         }
         .navigationDestination(isPresented: $gotoHome) {
             TargetView()
+        }
+        .navigationDestination(isPresented: $locationManager.getSucess) {
+            NearbyView()
         }
         .onChange(of: locationManager.lastLocation) { newLocation in
             guard let location = newLocation else { return }
@@ -77,6 +86,7 @@ struct ScanView: View {
             }
         }
     }
+       
 }
 
 
@@ -89,6 +99,7 @@ struct ScanView_Previews: PreviewProvider {
 
 class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     private let locationManager = CLLocationManager()
+    @Published var getSucess: Bool = false
     @Published var lastLocation: CLLocation?
 
     override init() {
@@ -102,23 +113,50 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        lastLocation = locations.first
+        DispatchQueue.main.async { // dispatch to the main queue
+            self.lastLocation = locations.first
+            self.getSucess = true // Assuming you want to set this to true when you get a location
+        }
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error.localizedDescription)
+        DispatchQueue.main.async { // dispatch to the main queue
+            self.getSucess = false
+            print(error.localizedDescription)
+        }
     }
 }
 
-struct ScanModel: Codable {
-    let id: String
-    let name: String
-    let distance: Double
+//struct ScanModel: Codable {
+//    let id: String
+//    let name: String
+//    let distance: Double
+//}
+
+struct ScanModel: Decodable {
+    let location: Location
+    let username: String
+    let tictok: String
+    let instagram: String
+    let facebook: String
+    let snapchat: String
+    let email: String
 }
 
+struct Location: Decodable {
+    let lon: Double
+    let lat: Double
+}
+
+
 class ScanService {
+
+//    let uData = UserData()
+    let email = UserData.shared.email
+    var userData = UserData.shared.users
+    
     static let shared = ScanService()
-    let baseURL = "http://192.168.105.94:5000/api/users/nearby-users" // Replace with your actual server URL
+    let baseURL = "http://192.168.105.94:5000/api/users" // Replace with your actual server URL
 
     func findNearbyUsers(location: CLLocation, completion: @escaping (Result<[ScanModel], Error>) -> Void) {
         let url = URL(string: "\(baseURL)/nearby-users")!
@@ -130,7 +168,8 @@ class ScanService {
             "location": [
                 "lat": location.coordinate.latitude,
                 "lon": location.coordinate.longitude
-            ]
+            ],
+            "email" : email
         ]
         print("#$#$#$", body)
         
@@ -151,6 +190,8 @@ class ScanService {
                 // Assuming your server returns JSON with an array of user data
                 let users = try JSONDecoder().decode([ScanModel].self, from: data)
                 completion(.success(users))
+                UserData.shared.users = users
+               
             } catch {
                 completion(.failure(error))
             }

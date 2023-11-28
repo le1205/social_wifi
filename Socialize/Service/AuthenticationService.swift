@@ -97,7 +97,6 @@ class AuthenticationService {
         
         let session = URLSession.shared
         let (responseData, _) = try await session.data(for: request)
-        print("---+++-", String(data: responseData, encoding: .utf8))
         let decoded = try JSONDecoder().decode(LoginResponse.self, from: responseData)
         if decoded.code != 200 {
             throw AuthenticationError(status_code: decoded.code, serverMessage: decoded.message!)
@@ -123,7 +122,6 @@ class AuthenticationService {
         let session = URLSession.shared
         
         let (responseData, _) = try await session.data(for: request)
-        print("------", String(data: responseData, encoding: .utf8))
         let decoded = try JSONDecoder().decode(RegisterResponse.self, from: responseData)
         
         if decoded.status_code != 201 {

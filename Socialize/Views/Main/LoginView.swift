@@ -18,7 +18,7 @@ struct LoginView: View {
     var body: some View {
         VStack{
             Spacer()
-            Text("Register Your Socialize")
+            Text("Login Your Socialize")
                 .font(.system(size: 25, weight: .bold))
                 .multilineTextAlignment(.center)
                 .foregroundColor(Color(red: 0.13, green: 0.17, blue: 0.21))
@@ -62,6 +62,9 @@ struct LoginView: View {
         .padding(18)
         .navigationDestination(isPresented: $viewModel.authSuccessful) {
                 ScanView().environmentObject(userData)
+            }
+        .navigationDestination(isPresented: $gotoRegister) {
+                RegisterView()
             }
         }
     }

@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct NearbyView: View {
+    var userData = UserData.shared.users
+    
+    
     var body: some View {
         VStack{
             MainHeader()
             HStack{
-                Text("5")
+                Text("\(userData?.count ?? 0)")
                     .font(.custom("Manrope", size: 35))
                     .fontWeight(.semibold) // this is closest to font-weight of 600
                     .foregroundColor(Color(red: 8/255, green: 37/255, blue: 105/255)) // #082569
@@ -28,12 +31,23 @@ struct NearbyView: View {
             }
             ScrollView {
                 VStack{
-                    UserList(imageNames:["instagram", "facebook", "tictok", "snapchat"], avatarName: "user_1")
-                    UserList(imageNames:["instagram", "facebook", "tictok"], avatarName: "user_2")
-                    UserList(imageNames:["instagram", "facebook"], avatarName: "user_3")
-                    UserList(imageNames:["instagram", "tictok", "snapchat"], avatarName: "user_4")
-                    UserList(imageNames:["instagram"], avatarName: "user_5")
-                    UserList(imageNames:["instagram"], avatarName: "user_5")
+                    ForEach(userData?.indices ?? 0..<0, id: \.self) { index in
+                        let user = userData?[index]
+                        let imageNames = [
+                            user?.instagram != nil ? "instagram" : nil,
+                            user?.facebook != nil ? "facebook" : nil,
+                            user?.tictok != nil ? "tictok" : nil,
+                            user?.snapchat != nil ? "snapchat" : nil
+                        ].compactMap { $0 } // This removes nil values from the array
+
+                        UserList(imageNames: imageNames, avatarName: "user_1")
+                    }
+//                    UserList(imageNames:["instagram", "facebook", "tictok", "snapchat"], avatarName: "user_1")
+//                    UserList(imageNames:["instagram", "facebook", "tictok"], avatarName: "user_2")
+//                    UserList(imageNames:["instagram", "facebook"], avatarName: "user_3")
+//                    UserList(imageNames:["instagram", "tictok", "snapchat"], avatarName: "user_4")
+//                    UserList(imageNames:["instagram"], avatarName: "user_5")
+//                    UserList(imageNames:["instagram"], avatarName: "user_5")
                 }
             }
             Spacer()
@@ -43,6 +57,7 @@ struct NearbyView: View {
             
         }
         .padding()
+        
     }
 }
 

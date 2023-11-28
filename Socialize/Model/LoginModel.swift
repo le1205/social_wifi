@@ -51,8 +51,12 @@ extension LoginView {
                     return
                 } else {
                     let token = try await AuthenticationService().login(email, password)
+                    let userData = UserData.shared
+                    userData.resetUserData()
                     userData.authToken = token
                     userData.user_id = getUserIdFromAuthToken(authToken: token) ?? ""
+                    userData.email = email
+                    print("^#$#", userData.email)
                     authSuccessful = true
                 }
                

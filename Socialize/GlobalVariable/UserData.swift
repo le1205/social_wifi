@@ -8,6 +8,7 @@
 import Foundation
 
 class UserData: ObservableObject {
+    static let shared = UserData()
     
     @Published var authToken: String = ""
     @Published var msg: String = ""
@@ -18,7 +19,9 @@ class UserData: ObservableObject {
     @Published var instagram: String = ""
     @Published var facebook: String = ""
     @Published var snapchat: String = ""
+    @Published var getSucess: Bool = false
     @Published var duration: CGFloat = 0.0
+    @Published var users: [ScanModel] = []
     
     func resetUserData() {
         DispatchQueue.main.async {
